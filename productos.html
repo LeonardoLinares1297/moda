@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos 2025 | A&A Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lilac: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        /* Animación para agregar al carrito */
+        @keyframes bounce-short {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-bounce-short {
+            animation: bounce-short 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-lilac-50 text-gray-700 font-sans flex flex-col min-h-screen">
+
+    <!-- HEADER (Consistente con Index) -->
+    <header class="relative bg-white shadow-sm h-32 md:h-40 border-b-4 border-lilac-200">
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center relative">
+            <div class="flex items-center justify-between mt-4 md:mt-0">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-lilac-400 rounded-full flex items-center justify-center text-white text-2xl font-serif italic border-2 border-lilac-200">A</div>
+                    <h1 class="text-3xl md:text-5xl font-serif text-lilac-900 tracking-wider">A&A <span class="text-lg text-lilac-400 font-sans tracking-widest block md:inline">FASHION</span></h1>
+                </div>
+
+                <!-- Carrito Icono (Funcionalidad Visual) -->
+                <div class="md:absolute md:top-8 md:right-32 flex items-center">
+                     <div class="relative cursor-pointer group">
+                        <i class="fas fa-shopping-bag text-2xl text-lilac-800"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        <div class="absolute right-0 mt-2 w-64 bg-white shadow-xl rounded-lg p-4 hidden group-hover:block z-50 border border-lilac-100">
+                            <p class="text-sm font-bold text-gray-700 mb-2">Tu Carrito</p>
+                            <div id="cart-items" class="text-xs text-gray-500 mb-2">Vacío</div>
+                            <button class="w-full bg-lilac-800 text-white text-xs py-2 rounded hover:bg-lilac-700">Ir a Pagar</button>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <!-- Menú Bottom-Right -->
+            <nav class="absolute bottom-2 right-6 hidden md:block">
+                <ul class="flex space-x-8 text-sm uppercase tracking-widest font-bold text-gray-500">
+                    <li><a href="index.html" class="hover:text-lilac-600 transition duration-300">Inicio</a></li>
+                    <li><a href="productos.html" class="text-lilac-800 border-b-2 border-lilac-500 pb-1">Productos</a></li>
+                    <li><a href="temporada.html" class="hover:text-lilac-600 transition duration-300">Temporada</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-lilac-600 transition duration-300">Sugerencias</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Botón Móvil -->
+            <div class="absolute top-8 right-6 md:hidden">
+                <button id="mobile-menu-btn" class="text-lilac-800"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <!-- Menú Móvil Oculto -->
+        <div id="mobile-menu" class="hidden md:hidden bg-lilac-100 absolute w-full z-50 border-t border-lilac-200">
+            <ul class="flex flex-col p-4 space-y-3 font-bold text-lilac-900 text-center">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html" class="bg-white rounded py-2">Productos</a></li>
+                <li><a href="temporada.html">Temporada</a></li>
+                <li><a href="sugerencias.html">Sugerencias</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- TÍTULO DE PÁGINA -->
+    <section class="bg-lilac-100 py-10 text-center">
+        <h2 class="text-4xl font-serif text-lilac-900 mb-2">Colección 2025</h2>
+        <p class="text-gray-600 italic">Descubre nuestra selección de alta costura y estilo urbano.</p>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row gap-8">
+        
+        <!-- SIDEBAR DE FILTROS (Izquierda) -->
+        <aside class="w-full md:w-1/4">
+            <div class="bg-white p-6 rounded-xl shadow-md border border-lilac-100 sticky top-6">
+                <div class="flex justify-between items-center border-b border-lilac-200 pb-2 mb-6">
+                    <h3 class="text-xl font-serif text-lilac-900">Filtrar</h3>
+                    <button id="reset-filters" class="text-xs text-lilac-500 hover:text-lilac-800 underline">Limpiar</button>
+                </div>
+                
+                <!-- Categorías -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-gray-700 mb-3 uppercase text-xs tracking-wider">Categorías</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><label class="flex items-center space-x-2 cursor-pointer hover:text-lilac-600"><input type="checkbox" value="gala" class="filter-category accent-lilac-500 rounded"> <span>Vestidos de Gala</span></label></li>
+                        <li><label class="flex items-center space-x-2 cursor-pointer hover:text-lilac-600"><input type="checkbox" value="casual" class="filter-category accent-lilac-500 rounded"> <span>Casual Chic</span></label></li>
+                        <li><label class="flex items-center space-x-2 cursor-pointer hover:text-lilac-600"><input type="checkbox" value="blazers" class="filter-category accent-lilac-500 rounded"> <span>Blazers & Abrigos</span></label></li>
+                        <li><label class="flex items-center space-x-2 cursor-pointer hover:text-lilac-600"><input type="checkbox" value="accesorios" class="filter-category accent-lilac-500 rounded"> <span>Accesorios</span></label></li>
+                    </ul>
+                </div>
+
+                <!-- Buscador por nombre -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-gray-700 mb-3 uppercase text-xs tracking-wider">Buscar</h4>
+                    <input type="text" id="search-input" placeholder="Nombre del producto..." class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-lilac-500">
+                </div>
+
+                <!-- Rango de Precio -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-gray-700 mb-3 uppercase text-xs tracking-wider">Precio Máximo: <span id="price-val" class="text-lilac-800">$5000</span></h4>
+                    <input type="range" id="price-range" min="0" max="5000" value="5000" class="w-full accent-lilac-500">
+                </div>
+
+                <button id="apply-filters" class="w-full bg-lilac-800 text-white py-2 rounded-lg hover:bg-lilac-700 transition shadow-lg text-sm uppercase tracking-widest">Aplicar Filtros</button>
+            </div>
+        </aside>
+
+        <!-- GRID DE PRODUCTOS (Derecha) -->
+        <main class="w-full md:w-3/4">
+            
+            <!-- Barra de ordenamiento -->
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+                <span id="results-count" class="text-sm text-gray-500">Cargando productos...</span>
+                <select id="sort-select" class="border border-lilac-200 rounded px-3 py-1 text-sm bg-white focus:outline-none focus:border-lilac-500">
+                    <option value="default">Relevancia</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                    <option value="newest">Lo más nuevo</option>
+                </select>
+            </div>
+
+            <!-- Contenedor Grid (Se llena con JS) -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Los productos se inyectan aquí via JS -->
+            </div>
+            
+            <!-- Mensaje de no resultados -->
+            <div id="no-results" class="hidden text-center py-12">
+                <i class="fas fa-search text-4xl text-gray-300 mb-4"></i>
+                <p class="text-gray-500">No encontramos productos con esos filtros.</p>
+                <button onclick="resetFilters()" class="text-lilac-600 underline mt-2">Ver todos</button>
+            </div>
+
+            <!-- Paginación Visual (No funcional en este demo de JS puro, pero mantenida por diseño) -->
+            <div class="mt-12 flex justify-center space-x-2" id="pagination">
+                <button class="px-4 py-2 bg-lilac-500 text-white rounded shadow-md">1</button>
+                <button class="px-4 py-2 bg-white border border-lilac-200 rounded hover:bg-lilac-100 text-lilac-900">2</button>
+                <button class="px-4 py-2 bg-white border border-lilac-200 rounded hover:bg-lilac-100 text-lilac-900">&raquo;</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- BANNER INFORMATIVO BOTTOM -->
+    <section class="bg-lilac-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-serif mb-4">¿Necesitas ayuda con tu talla?</h2>
+            <p class="mb-6 max-w-2xl mx-auto text-lilac-200">En A&A Fashion contamos con asesoras personalizadas listas para ayudarte a encontrar el ajuste perfecto para tu silueta.</p>
+            <a href="sugerencias.html" class="inline-block bg-white text-lilac-900 font-bold px-8 py-3 rounded-full hover:bg-lilac-100 transition shadow-lg">Contactar Asesora</a>
+        </div>
+    </section>
+
+    <!-- FOOTER (Idéntico al Index) -->
+    <footer class="bg-lilac-900 text-lilac-100 py-12 mt-auto">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-serif text-white mb-4">LILAC</h3>
+                <p class="text-sm text-lilac-200">Redefiniendo la moda con elegancia y suavidad. Tu destino para el estilo contemporáneo 2025.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white hover:underline">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-white hover:underline">Catálogo</a></li>
+                    <li><a href="temporada.html" class="hover:text-white hover:underline">Tendencias</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Ayuda</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="envios.html" class="hover:text-white hover:underline">Envíos</a></li>
+                    <li><a href="devoluciones.html" class="hover:text-white hover:underline">Devoluciones</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-white hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-lilac-800 pt-6 text-xs">
+            &copy; 2025 A&A Fashion. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- LÓGICA JAVASCRIPT -->
+    <script>
+        // --- 1. Base de Datos de Productos (Mock) ---
+        const allProducts = [
+            { id: 1, name: "Vestido Seda Imperial", category: "gala", price: 2499, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop", new: true, sale: false },
+            { id: 2, name: "Top Velvet Negro", category: "casual", price: 899, image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop", new: false, sale: false },
+            { id: 3, name: "Bolso Lilac Tote", category: "accesorios", price: 1200, originalPrice: 1500, image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=800&auto=format&fit=crop", new: false, sale: true },
+            { id: 4, name: "Jeans Corte Alto", category: "casual", price: 1150, image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=800&auto=format&fit=crop", new: false, sale: false },
+            { id: 5, name: "Collar Luna Dorada", category: "accesorios", price: 550, image: "https://images.unsplash.com/photo-1564485377539-4af72d1f6a2f?q=80&w=800&auto=format&fit=crop", new: false, sale: false },
+            { id: 6, name: "Pañuelo Seda Abstracto", category: "accesorios", price: 780, image: "https://images.unsplash.com/photo-1550614000-4b9519e09646?q=80&w=800&auto=format&fit=crop", new: false, sale: false },
+            { id: 7, name: "Vestido Noche Estrellada", category: "gala", price: 3200, image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&auto=format&fit=crop", new: true, sale: false },
+            { id: 8, name: "Blazer Oversize Lila", category: "blazers", price: 1800, image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800&auto=format&fit=crop", new: false, sale: false },
+            { id: 9, name: "Abrigo Lana Beige", category: "blazers", price: 4500, image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?q=80&w=800&auto=format&fit=crop", new: false, sale: false },
+            { id: 10, name: "Vestido Cóctel Rojo", category: "gala", price: 2100, originalPrice: 2800, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop", new: false, sale: true },
+        ];
+
+        // --- 2. Elementos del DOM ---
+        const productsGrid = document.getElementById('products-grid');
+        const resultsCount = document.getElementById('results-count');
+        const noResults = document.getElementById('no-results');
+        const categoryCheckboxes = document.querySelectorAll('.filter-category');
+        const priceRange = document.getElementById('price-range');
+        const priceVal = document.getElementById('price-val');
+        const searchInput = document.getElementById('search-input');
+        const sortSelect = document.getElementById('sort-select');
+        const cartCount = document.getElementById('cart-count');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        let cart = 0;
+
+        // --- 3. Inicialización ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Checar parámetros de URL (ej: ?category=gala)
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialCategory = urlParams.get('category');
+
+            if (initialCategory) {
+                // Marcar el checkbox correspondiente
+                categoryCheckboxes.forEach(cb => {
+                    if (cb.value === initialCategory) cb.checked = true;
+                });
+            }
+
+            renderProducts();
+        });
+
+        // --- 4. Renderizado ---
+        function renderProducts() {
+            // Obtener filtros actuales
+            const checkedCategories = Array.from(categoryCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+            
+            const maxPrice = parseInt(priceRange.value);
+            const searchText = searchInput.value.toLowerCase();
+            const sortMode = sortSelect.value;
+
+            // Filtrar
+            let filtered = allProducts.filter(p => {
+                const matchCategory = checkedCategories.length === 0 || checkedCategories.includes(p.category);
+                const matchPrice = p.price <= maxPrice;
+                const matchSearch = p.name.toLowerCase().includes(searchText);
+                return matchCategory && matchPrice && matchSearch;
+            });
+
+            // Ordenar
+            if (sortMode === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+            if (sortMode === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+            if (sortMode === 'newest') filtered.sort((a, b) => (a.new === b.new) ? 0 : a.new ? -1 : 1);
+
+            // Actualizar UI
+            productsGrid.innerHTML = '';
+            resultsCount.textContent = `Mostrando ${filtered.length} productos`;
+
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+                document.getElementById('pagination').classList.add('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                document.getElementById('pagination').classList.remove('hidden');
+                
+                filtered.forEach(product => {
+                    const card = document.createElement('div');
+                    card.className = "bg-white rounded-xl shadow-lg overflow-hidden border border-lilac-100 product-card group relative fade-in-up";
+                    
+                    // Badges
+                    let badgeHTML = '';
+                    if (product.new) badgeHTML = '<div class="absolute top-3 left-3 bg-lilac-500 text-white text-[10px] font-bold px-2 py-1 uppercase rounded z-10 tracking-widest">Nuevo</div>';
+                    if (product.sale) badgeHTML = '<div class="absolute top-3 right-3 bg-red-400 text-white text-[10px] font-bold px-2 py-1 uppercase rounded z-10 tracking-widest">-20%</div>';
+
+                    // Price logic
+                    let priceHTML = `<span class="text-xl font-bold text-lilac-900">$${product.price}</span>`;
+                    if (product.sale && product.originalPrice) {
+                        priceHTML = `<div><span class="text-sm text-gray-400 line-through mr-2">$${product.originalPrice}</span><span class="text-xl font-bold text-red-500">$${product.price}</span></div>`;
+                    }
+
+                    card.innerHTML = `
+                        ${badgeHTML}
+                        <div class="h-64 overflow-hidden relative bg-gray-100">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition duration-500">
+                            <div class="product-actions absolute inset-0 bg-lilac-900/30 flex items-center justify-center space-x-3 opacity-0 transition duration-300 transform translate-y-4">
+                                <button class="bg-white text-lilac-900 w-10 h-10 rounded-full flex items-center justify-center hover:bg-lilac-400 hover:text-white transition shadow" title="Ver detalle"><i class="fas fa-eye"></i></button>
+                                <button onclick="addToCart(this)" class="bg-lilac-800 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-lilac-600 transition shadow" title="Agregar al carrito"><i class="fas fa-shopping-bag"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-serif text-lg text-gray-800 group-hover:text-lilac-700 transition">${product.name}</h3>
+                            <p class="text-xs text-gray-500 mb-2 capitalize">${product.category} • Colección 2025</p>
+                            <div class="flex justify-between items-center mt-3">
+                                ${priceHTML}
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    productsGrid.appendChild(card);
+                });
+            }
+        }
+
+        // --- 5. Event Listeners ---
+        // Filtros
+        document.getElementById('apply-filters').addEventListener('click', renderProducts);
+        document.getElementById('reset-filters').addEventListener('click', resetFilters);
+        
+        // Inputs interactivos
+        priceRange.addEventListener('input', (e) => {
+            priceVal.textContent = `$${e.target.value}`;
+        });
+        
+        searchInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') renderProducts();
+        });
+
+        sortSelect.addEventListener('change', renderProducts);
+
+        // Menú Móvil
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- 6. Funciones Auxiliares ---
+        function resetFilters() {
+            categoryCheckboxes.forEach(cb => cb.checked = false);
+            priceRange.value = 5000;
+            priceVal.textContent = "$5000";
+            searchInput.value = "";
+            sortSelect.value = "default";
+            
+            // Limpiar URL param
+            const url = new URL(window.location);
+            url.searchParams.delete('category');
+            window.history.pushState({}, '', url);
+            
+            renderProducts();
+        }
+
+        function addToCart(btnElement) {
+            cart++;
+            cartCount.textContent = cart;
+            cartCount.classList.add('animate-bounce-short');
+            
+            // Feedback visual en el botón
+            const icon = btnElement.querySelector('i');
+            icon.classList.remove('fa-shopping-bag');
+            icon.classList.add('fa-check');
+            
+            setTimeout(() => {
+                cartCount.classList.remove('animate-bounce-short');
+                icon.classList.add('fa-shopping-bag');
+                icon.classList.remove('fa-check');
+            }, 1000);
+            
+            // Actualizar minicarrito
+            document.getElementById('cart-items').textContent = `${cart} artículos agregados`;
+        }
+
+        // Función global para resetear desde el mensaje de "no resultados"
+        window.resetFilters = resetFilters;
+        window.addToCart = addToCart;
+    </script>
+</body>
+</html>

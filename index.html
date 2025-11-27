@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILAC | Moda & Estilo 2025</title>
+    <!-- Tailwind CSS para diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuentes de Google: Playfair Display (Elegante) y Lato (Moderno) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lilac: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Efectos suaves de desplazamiento */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Estilo para imágenes */
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+        .img-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-lilac-50 text-gray-700 font-sans smooth-scroll flex flex-col min-h-screen">
+
+    <!-- ENCABEZADO / HEADER -->
+    <header class="relative bg-white shadow-sm h-32 md:h-40 border-b-4 border-lilac-200">
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center relative">
+            
+            <!-- Logo y Título -->
+            <div class="flex items-center space-x-3 mt-4 md:mt-0">
+                <div class="w-10 h-10 bg-lilac-400 rounded-full flex items-center justify-center text-white text-xl font-serif italic">A</div>
+                <h1 class="text-3xl md:text-5xl font-serif text-lilac-900 tracking-wider">A&A <span class="text-lg text-lilac-400 font-sans tracking-widest block md:inline">FASHION</span></h1>
+            </div>
+
+            <!-- Menú de Navegación (Bottom-Right del Header) -->
+            <nav class="absolute bottom-2 right-6 hidden md:block">
+                <ul class="flex space-x-8 text-sm uppercase tracking-widest font-bold text-gray-500">
+                    <li><a href="index.html" class="text-lilac-800 border-b-2 border-lilac-500 pb-1">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-lilac-600 transition duration-300">Productos</a></li>
+                    <li><a href="temporada.html" class="hover:text-lilac-600 transition duration-300">Temporada</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-lilac-600 transition duration-300">Sugerencias</a></li>
+                </ul>
+            </nav>
+
+            <!-- Menú Móvil (Hamburguesa) -->
+            <div class="absolute top-8 right-6 md:hidden">
+                <button id="mobile-menu-btn" class="text-lilac-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Dropdown Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-lilac-100 absolute w-full z-50 border-t border-lilac-200 shadow-lg">
+            <ul class="flex flex-col p-4 space-y-3 font-bold text-lilac-900 text-center">
+                <li><a href="index.html" class="block py-2 bg-white rounded shadow-sm">Inicio</a></li>
+                <li><a href="productos.html" class="block py-2 hover:bg-white rounded">Productos</a></li>
+                <li><a href="temporada.html" class="block py-2 hover:bg-white rounded">Temporada</a></li>
+                <li><a href="sugerencias.html" class="block py-2 hover:bg-white rounded">Sugerencias</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Banner Principal) -->
+    <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Imagen de fondo con overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" alt="Moda Pastel" class="w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-r from-lilac-100/80 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2">
+            <div class="fade-in-up">
+                <span class="bg-lilac-800 text-white px-3 py-1 text-xs uppercase tracking-widest rounded-full mb-4 inline-block">Nueva Colección 2025</span>
+                <h2 class="text-5xl md:text-7xl font-serif text-lilac-900 leading-tight mb-6">
+                    Futuro & <br> <span class="italic text-gray-700">Suavidad</span>
+                </h2>
+                <p class="text-lg text-gray-700 mb-8 max-w-md border-l-4 border-lilac-400 pl-4">
+                    Bienvenido al 2025. Descubre la fusión perfecta entre la tecnología textil y la delicadeza del color. Tu estilo, evolucionado.
+                </p>
+                <a href="productos.html" class="bg-lilac-900 text-white px-8 py-4 rounded-full shadow-lg hover:bg-lilac-700 transition transform hover:-translate-y-1 inline-flex items-center gap-2">
+                    Ver Catálogo 2025 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: HISTORIA DE LA MODA -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Imagen Decorativa -->
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute top-4 -left-4 w-full h-full border-2 border-lilac-300 rounded-lg z-0 hidden md:block"></div>
+                    <div class="img-hover-zoom rounded-lg shadow-xl relative z-10 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550614000-4b9519e09646?q=80&w=2070&auto=format&fit=crop" alt="Historia Moda" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+
+                <!-- Texto Informativo -->
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-lilac-500 font-bold uppercase tracking-widest text-sm mb-2">Nuestra Visión 2025</h3>
+                    <h2 class="text-4xl font-serif text-gray-800 mb-6">Innovación en cada hilo</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Este año 2025, A&A Fashion da un salto hacia el futuro. No solo creamos ropa, diseñamos experiencias. Nuestra nueva línea incorpora tejidos inteligentes que se adaptan a tu temperatura y movimiento.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Mantenemos nuestra esencia artesanal, pero con una mirada puesta en la sostenibilidad radical. Cada prenda de esta colección reduce en un 40% la huella de carbono comparada con el año anterior.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="bg-lilac-50 p-4 rounded-lg border border-lilac-100 text-center hover:shadow-md transition">
+                            <i class="fas fa-gem text-lilac-400 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-gray-700">Calidad Premium</h4>
+                        </div>
+                        <div class="bg-lilac-50 p-4 rounded-lg border border-lilac-100 text-center hover:shadow-md transition">
+                            <i class="fas fa-leaf text-lilac-400 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-gray-700">Eco-Friendly 2025</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER DE CATEGORÍAS RÁPIDAS (Funcionales) -->
+    <section class="py-16 bg-lilac-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif text-lilac-900">Explora por Estilo</h2>
+                <div class="w-24 h-1 bg-lilac-300 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Casual -->
+                <a href="productos.html?category=casual" class="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg block">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Casual">
+                    <div class="absolute inset-0 bg-lilac-900/40 group-hover:bg-lilac-900/20 transition duration-300 flex items-center justify-center">
+                        <h3 class="text-white text-3xl font-serif border-2 border-white px-6 py-2">Casual</h3>
+                    </div>
+                </a>
+                
+                <!-- Card 2: Gala -->
+                <a href="productos.html?category=gala" class="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg block">
+                    <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Gala">
+                    <div class="absolute inset-0 bg-lilac-900/40 group-hover:bg-lilac-900/20 transition duration-300 flex items-center justify-center">
+                        <h3 class="text-white text-3xl font-serif border-2 border-white px-6 py-2">Gala</h3>
+                    </div>
+                </a>
+                
+                <!-- Card 3: Accesorios -->
+                <a href="productos.html?category=accesorios" class="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg block">
+                    <img src="https://images.unsplash.com/photo-1550614000-481e2f27ad6d?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Accesorios">
+                    <div class="absolute inset-0 bg-lilac-900/40 group-hover:bg-lilac-900/20 transition duration-300 flex items-center justify-center">
+                        <h3 class="text-white text-3xl font-serif border-2 border-white px-6 py-2">Accesorios</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: TESTIMONIOS (Información Adicional) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif text-lilac-900 text-center mb-12">Algunos testimonios de nuestros clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-lilac-50 p-8 rounded-xl relative">
+                    <i class="fas fa-quote-left text-4xl text-lilac-200 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic relative z-10 mb-6">"La calidad de los vestidos de gala es insuperable. Compré uno para la boda de mi hermana y recibí cumplidos toda la noche. ¡A&A Fashion nunca falla!"</p>
+                    <div class="flex items-center">
+                        <img src="data:image/jpeg;base64,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" class="w-12 h-12 rounded-full mr-4" alt="Cliente">
+                        <div>
+                            <h4 class="font-bold text-lilac-900">Sofía M.</h4>
+                            <div class="text-yellow-400 text-xs">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-lilac-50 p-8 rounded-xl relative">
+                    <i class="fas fa-quote-left text-4xl text-lilac-200 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic relative z-10 mb-6">"Me encanta la nueva colección 2025. Los tonos lilas son perfectos y la ropa casual es súper cómoda para el día a día."</p>
+                    <div class="flex items-center">
+                        <img src="https://i.pinimg.com/originals/5e/d0/a0/5ed0a0a7cf2cf89e8af841bb38ce0414.jpg" class="w-12 h-12 rounded-full mr-4" alt="Cliente">
+                        <div>
+                            <h4 class="font-bold text-lilac-900">Valentina R.</h4>
+                            <div class="text-yellow-400 text-xs">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-lilac-50 p-8 rounded-xl relative">
+                    <i class="fas fa-quote-left text-4xl text-lilac-200 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic relative z-10 mb-6">"La atención al cliente en sugerencias es rápida y muy amable. Se nota que les importa la experiencia del comprador."</p>
+                    <div class="flex items-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF-5YsURdvJCfdLarIhtKkJTJON4GNmvisHQ&s" class="w-12 h-12 rounded-full mr-4" alt="Cliente">
+                        <div>
+                            <h4 class="font-bold text-lilac-900">Camila T.</h4>
+                            <div class="text-yellow-400 text-xs">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Pie de página Maestro) -->
+    <footer class="bg-lilac-900 text-lilac-100 py-12 mt-auto">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-serif text-white mb-4">LILAC</h3>
+                <p class="text-sm text-lilac-200">Redefiniendo la moda con elegancia y suavidad. Tu destino para el estilo contemporáneo 2025.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white hover:underline">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-white hover:underline">Catálogo</a></li>
+                    <li><a href="temporada.html" class="hover:text-white hover:underline">Tendencias</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Ayuda</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="envios.html" class="hover:text-white hover:underline">Envíos</a></li>
+                    <li><a href="devoluciones.html" class="hover:text-white hover:underline">Devoluciones</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-white hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-lilac-800 pt-6 text-xs">
+            &copy; 2025 A&A Fashion. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

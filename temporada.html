@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporada 2025 | A&A Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lilac: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos para el scroll horizontal oculto */
+        .hide-scroll-bar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll-bar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Efecto parallax suave */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-lilac-50 text-gray-700 font-sans flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="relative bg-white shadow-sm h-32 md:h-40 border-b-4 border-lilac-200">
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center relative">
+            <div class="flex items-center space-x-3 mt-4 md:mt-0">
+                <div class="w-10 h-10 bg-lilac-400 rounded-full flex items-center justify-center text-white text-xl font-serif italic">A</div>
+                <h1 class="text-3xl md:text-5xl font-serif text-lilac-900 tracking-wider">A&A <span class="text-lg text-lilac-400 font-sans tracking-widest block md:inline">FASHION</span></h1>
+            </div>
+
+            <nav class="absolute bottom-2 right-6 hidden md:block">
+                <ul class="flex space-x-8 text-sm uppercase tracking-widest font-bold text-gray-500">
+                    <li><a href="index.html" class="hover:text-lilac-600 transition duration-300">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-lilac-600 transition duration-300">Productos</a></li>
+                    <li><a href="temporada.html" class="text-lilac-800 border-b-2 border-lilac-500 pb-1">Temporada</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-lilac-600 transition duration-300">Sugerencias</a></li>
+                </ul>
+            </nav>
+            
+            <div class="absolute top-8 right-6 md:hidden">
+                <button id="mobile-menu-btn" class="text-lilac-800"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-lilac-100 absolute w-full z-50 border-t border-lilac-200 shadow-lg">
+            <ul class="flex flex-col p-4 space-y-3 font-bold text-lilac-900 text-center">
+                <li><a href="index.html" class="block py-2 hover:bg-white rounded">Inicio</a></li>
+                <li><a href="productos.html" class="block py-2 hover:bg-white rounded">Productos</a></li>
+                <li><a href="temporada.html" class="block py-2 bg-white rounded shadow-sm">Temporada</a></li>
+                <li><a href="sugerencias.html" class="block py-2 hover:bg-white rounded">Sugerencias</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO VIDEO/IMAGEN STYLE -->
+    <section class="relative h-[500px] w-full flex items-center justify-center parallax" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-lilac-900/40"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <span class="uppercase tracking-[0.3em] text-sm md:text-base border-b border-white pb-2 mb-4 inline-block">Colección 2025</span>
+            <h2 class="text-5xl md:text-8xl font-serif italic mb-6">Bloom & Tech</h2>
+            <p class="text-lg md:text-xl font-light max-w-2xl mx-auto">Donde la naturaleza se encuentra con el futuro. Textiles inteligentes, cortes fluidos y una paleta de colores etéreos.</p>
+        </div>
+    </section>
+
+    <!-- INTRO TENDENCIA -->
+    <section class="py-16 container mx-auto px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h3 class="text-lilac-500 font-bold uppercase tracking-widest text-sm mb-4">Color del Año 2025</h3>
+            <h2 class="text-4xl font-serif text-gray-800 mb-6">Future Dusk</h2>
+            <p class="text-gray-600 leading-relaxed mb-8">
+                Un tono oscuro, temperamental e intrigante, situado entre el azul y el violeta. 'Future Dusk' evoca una sensación de misterio y escapismo. En A&A Fashion, lo combinamos con nuestros lilas clásicos para crear profundidad y sofisticación tecnológica.
+            </p>
+            <div class="flex justify-center gap-4">
+                <div class="w-16 h-16 rounded-full bg-[#483d8b] shadow-md border-2 border-white" title="Future Dusk"></div>
+                <div class="w-16 h-16 rounded-full bg-lilac-400 shadow-md border-2 border-white" title="Digital Lilac"></div>
+                <div class="w-16 h-16 rounded-full bg-lilac-100 shadow-md border-2 border-white" title="Soft Mist"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRUSEL HORIZONTAL EXTENDIDO -->
+    <section class="py-16 bg-lilac-50 overflow-hidden relative">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-3xl font-serif text-lilac-900">Pasarela 2025</h2>
+                    <p class="text-gray-500 mt-2">14 Piezas esenciales para tu armario este año.</p>
+                </div>
+                <!-- Flechas de control -->
+                <div class="hidden md:flex space-x-2">
+                    <button onclick="scrollCarousel(-1)" class="w-10 h-10 rounded-full border border-lilac-300 flex items-center justify-center text-lilac-700 hover:bg-lilac-200 transition"><i class="fas fa-arrow-left"></i></button>
+                    <button onclick="scrollCarousel(1)" class="w-10 h-10 rounded-full border border-lilac-300 flex items-center justify-center text-lilac-700 hover:bg-lilac-200 transition"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Contenedor Scroll -->
+            <div id="carousel-container" class="flex overflow-x-auto hide-scroll-bar pb-8 -mx-6 px-6 gap-6 scroll-smooth">
+                
+                <!-- ITEMS ORIGINALES (1-4) -->
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Blazer Estructurado</h4>
+                        <p class="text-sm text-gray-500">Oficina Moderna</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Seda & Satén</h4>
+                        <p class="text-sm text-gray-500">Noches de Gala</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605763240004-7e93b172d754?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Accesorios Bold</h4>
+                        <p class="text-sm text-gray-500">Detalles Únicos</p>
+                    </div>
+                </div>
+
+                 <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Vestidos Midi</h4>
+                        <p class="text-sm text-gray-500">Comodidad Chic</p>
+                    </div>
+                </div>
+
+                <!-- NUEVOS ITEMS (5-14) -->
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Abrigo Camel</h4>
+                        <p class="text-sm text-gray-500">Clásico Atemporal</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529139574466-a302c27e3844?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Botines de Cuero</h4>
+                        <p class="text-sm text-gray-500">Estilo Urbano</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534126511673-b6899657816a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Top Asimétrico</h4>
+                        <p class="text-sm text-gray-500">Vanguardia 2025</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Vestido Floral</h4>
+                        <p class="text-sm text-gray-500">Romance de Verano</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509319117193-518faef1487a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Capa de Lana</h4>
+                        <p class="text-sm text-gray-500">Invierno Cálido</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Bolsa Minimalista</h4>
+                        <p class="text-sm text-gray-500">Menos es Más</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Tacones Azules</h4>
+                        <p class="text-sm text-gray-500">Toque de Color</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589465885857-44edb59ef526?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Suéter Oversize</h4>
+                        <p class="text-sm text-gray-500">Confort Total</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Vestido de Noche</h4>
+                        <p class="text-sm text-gray-500">Elegancia Pura</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576183479383-1f7a391d4d38?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800">Pantalón Palazzo</h4>
+                        <p class="text-sm text-gray-500">Fluidez y Movimiento</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-lilac-900 text-lilac-100 py-12 mt-auto">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-serif text-white mb-4">LILAC</h3>
+                <p class="text-sm text-lilac-200">Redefiniendo la moda con elegancia y suavidad. Tu destino para el estilo contemporáneo 2025.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white hover:underline">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-white hover:underline">Catálogo</a></li>
+                    <li><a href="temporada.html" class="hover:text-white hover:underline">Tendencias</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Ayuda</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="envios.html" class="hover:text-white hover:underline">Envíos</a></li>
+                    <li><a href="devoluciones.html" class="hover:text-white hover:underline">Devoluciones</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-white hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-lilac-800 pt-6 text-xs">
+            &copy; 2025 A&A Fashion. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Script para mover el carrusel
+        function scrollCarousel(direction) {
+            const container = document.getElementById('carousel-container');
+            const scrollAmount = 300; // Ancho de tarjeta + gap
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

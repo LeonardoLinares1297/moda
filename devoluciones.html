@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoluciones y Cambios | A&A Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lilac: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lilac-50 text-gray-700 font-sans flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="relative bg-white shadow-sm h-32 md:h-40 border-b-4 border-lilac-200">
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center relative">
+            <div class="flex items-center space-x-3 mt-4 md:mt-0">
+                <div class="w-10 h-10 bg-lilac-400 rounded-full flex items-center justify-center text-white text-xl font-serif italic">A</div>
+                <h1 class="text-3xl md:text-5xl font-serif text-lilac-900 tracking-wider">A&A <span class="text-lg text-lilac-400 font-sans tracking-widest block md:inline">FASHION</span></h1>
+            </div>
+
+            <nav class="absolute bottom-2 right-6 hidden md:block">
+                <ul class="flex space-x-8 text-sm uppercase tracking-widest font-bold text-gray-500">
+                    <li><a href="index.html" class="hover:text-lilac-600 transition duration-300">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-lilac-600 transition duration-300">Productos</a></li>
+                    <li><a href="temporada.html" class="hover:text-lilac-600 transition duration-300">Temporada</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-lilac-600 transition duration-300">Sugerencias</a></li>
+                </ul>
+            </nav>
+            
+            <div class="absolute top-8 right-6 md:hidden">
+                <button id="mobile-menu-btn" class="text-lilac-800"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-lilac-100 absolute w-full z-50 border-t border-lilac-200 shadow-lg">
+            <ul class="flex flex-col p-4 space-y-3 font-bold text-lilac-900 text-center">
+                <li><a href="index.html" class="block py-2 hover:bg-white rounded">Inicio</a></li>
+                <li><a href="productos.html" class="block py-2 hover:bg-white rounded">Productos</a></li>
+                <li><a href="temporada.html" class="block py-2 hover:bg-white rounded">Temporada</a></li>
+                <li><a href="sugerencias.html" class="block py-2 hover:bg-white rounded">Sugerencias</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- CONTENIDO DEVOLUCIONES -->
+    <div class="container mx-auto px-6 py-12 max-w-4xl">
+        <div class="text-center mb-12">
+             <div class="w-16 h-16 bg-lilac-200 rounded-full flex items-center justify-center mx-auto mb-4 text-lilac-800 text-2xl">
+                <i class="fas fa-undo"></i>
+            </div>
+            <h2 class="text-4xl font-serif text-lilac-900 mb-4">Cambios y Devoluciones</h2>
+            <p class="text-gray-600">Queremos que ames tu compra. Si no es así, hacerlo bien es fácil.</p>
+        </div>
+
+        <!-- Pasos -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-center">
+            <div class="bg-white p-6 rounded-lg shadow border-t-4 border-lilac-400">
+                <div class="text-4xl text-lilac-300 mb-3 font-serif">01</div>
+                <h4 class="font-bold text-gray-800 mb-2">Solicita</h4>
+                <p class="text-sm text-gray-600">Entra a "Sugerencias" y selecciona "Reclamo o Devolución" con tu número de orden.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow border-t-4 border-lilac-400">
+                <div class="text-4xl text-lilac-300 mb-3 font-serif">02</div>
+                <h4 class="font-bold text-gray-800 mb-2">Empaca</h4>
+                <p class="text-sm text-gray-600">Guarda el producto en su empaque original con etiquetas puestas.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow border-t-4 border-lilac-400">
+                <div class="text-4xl text-lilac-300 mb-3 font-serif">03</div>
+                <h4 class="font-bold text-gray-800 mb-2">Envía</h4>
+                <p class="text-sm text-gray-600">Te enviaremos una guía prepagada. Llévalo a la paquetería más cercana.</p>
+            </div>
+        </div>
+
+        <!-- Políticas Detalladas -->
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-lilac-100">
+            <h3 class="text-2xl font-serif text-lilac-900 mb-6">Nuestra Política</h3>
+            
+            <div class="space-y-6 text-sm text-gray-600">
+                <div class="flex gap-4">
+                    <i class="fas fa-check-circle text-lilac-500 text-xl flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-base">Plazo de 30 Días</h4>
+                        <p>Tienes hasta 30 días naturales después de recibir tu pedido para solicitar un cambio o devolución.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <i class="fas fa-tshirt text-lilac-500 text-xl flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-base">Estado de la Prenda</h4>
+                        <p>Las prendas deben estar sin usar, sin lavar, sin olores (perfume, humo, etc.) y con todas las etiquetas originales adheridas. Nos reservamos el derecho de rechazar devoluciones que no cumplan estos requisitos.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <i class="fas fa-hand-holding-usd text-lilac-500 text-xl flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-base">Reembolsos</h4>
+                        <p>Una vez recibida e inspeccionada la prenda en nuestro almacén (3-5 días hábiles), procesaremos tu reembolso al método de pago original. Esto puede tardar hasta 10 días hábiles en reflejarse en tu banco.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <i class="fas fa-exclamation-circle text-red-400 text-xl flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-base">Excepciones</h4>
+                        <p>Por higiene, no se aceptan devoluciones de ropa interior, trajes de baño (si se retiró el protector), ni aretes. Los productos en "Liquidación Final" no tienen cambio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="sugerencias.html" class="inline-block bg-lilac-800 text-white font-bold px-8 py-3 rounded hover:bg-lilac-700 transition">Iniciar Devolución</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-lilac-900 text-lilac-100 py-12 mt-auto">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-serif text-white mb-4">LILAC</h3>
+                <p class="text-sm text-lilac-200">Redefiniendo la moda con elegancia y suavidad. Tu destino para el estilo contemporáneo 2025.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white hover:underline">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-white hover:underline">Catálogo</a></li>
+                    <li><a href="temporada.html" class="hover:text-white hover:underline">Tendencias</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Ayuda</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="envios.html" class="hover:text-white hover:underline">Envíos</a></li>
+                    <li><a href="devoluciones.html" class="hover:text-white hover:underline">Devoluciones</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-white hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-lilac-800 pt-6 text-xs">
+            &copy; 2025 A&A Fashion. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

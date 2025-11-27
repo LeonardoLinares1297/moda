@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Envíos | A&A Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lilac: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lilac-50 text-gray-700 font-sans flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="relative bg-white shadow-sm h-32 md:h-40 border-b-4 border-lilac-200">
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center relative">
+            <div class="flex items-center space-x-3 mt-4 md:mt-0">
+                <div class="w-10 h-10 bg-lilac-400 rounded-full flex items-center justify-center text-white text-xl font-serif italic">A</div>
+                <h1 class="text-3xl md:text-5xl font-serif text-lilac-900 tracking-wider">A&A <span class="text-lg text-lilac-400 font-sans tracking-widest block md:inline">FASHION</span></h1>
+            </div>
+
+            <nav class="absolute bottom-2 right-6 hidden md:block">
+                <ul class="flex space-x-8 text-sm uppercase tracking-widest font-bold text-gray-500">
+                    <li><a href="index.html" class="hover:text-lilac-600 transition duration-300">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-lilac-600 transition duration-300">Productos</a></li>
+                    <li><a href="temporada.html" class="hover:text-lilac-600 transition duration-300">Temporada</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-lilac-600 transition duration-300">Sugerencias</a></li>
+                </ul>
+            </nav>
+            
+            <div class="absolute top-8 right-6 md:hidden">
+                <button id="mobile-menu-btn" class="text-lilac-800"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-lilac-100 absolute w-full z-50 border-t border-lilac-200 shadow-lg">
+            <ul class="flex flex-col p-4 space-y-3 font-bold text-lilac-900 text-center">
+                <li><a href="index.html" class="block py-2 hover:bg-white rounded">Inicio</a></li>
+                <li><a href="productos.html" class="block py-2 hover:bg-white rounded">Productos</a></li>
+                <li><a href="temporada.html" class="block py-2 hover:bg-white rounded">Temporada</a></li>
+                <li><a href="sugerencias.html" class="block py-2 hover:bg-white rounded">Sugerencias</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ENVÍOS -->
+    <div class="container mx-auto px-6 py-12 max-w-4xl">
+        <div class="text-center mb-12">
+            <div class="w-16 h-16 bg-lilac-200 rounded-full flex items-center justify-center mx-auto mb-4 text-lilac-800 text-2xl">
+                <i class="fas fa-shipping-fast"></i>
+            </div>
+            <h2 class="text-4xl font-serif text-lilac-900 mb-4">Información de Envíos</h2>
+            <p class="text-gray-600">Llevamos la moda hasta la puerta de tu casa con seguridad y rapidez.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Tarjeta 1 -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-lilac-100">
+                <h3 class="text-xl font-bold text-lilac-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-truck text-lilac-500"></i> Envío Nacional Estándar
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Disponible para todo el país. Ideal para quienes no tienen prisa.</p>
+                <ul class="text-sm space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Tiempo: 3 a 5 días hábiles</li>
+                    <li>Costo: $99 MXN</li>
+                    <li><strong>Gratis</strong> en compras mayores a $1,500 MXN</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-lilac-100">
+                <h3 class="text-xl font-bold text-lilac-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-plane text-lilac-500"></i> Envío Express
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Para cuando necesitas tu outfit urgentemente.</p>
+                <ul class="text-sm space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Tiempo: 1 a 2 días hábiles</li>
+                    <li>Costo: $199 MXN</li>
+                    <li>Cobertura limitada a ciudades principales</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-lilac-100">
+            <h3 class="text-2xl font-serif text-lilac-900 mb-6 border-b border-lilac-200 pb-2">Preguntas sobre envíos</h3>
+            
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-2">¿Cómo rastreo mi pedido?</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Una vez que tu pedido sea procesado, recibirás un correo electrónico con tu número de guía. Puedes ingresarlo en la página de la paquetería correspondiente (DHL, FedEx o Estafeta) para ver el estatus en tiempo real.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-2">Envíos Internacionales</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Sí realizamos envíos a USA y Latinoamérica. Los costos varían según el peso y destino, calculándose automáticamente al momento del checkout. Los tiempos de entrega oscilan entre 7 y 15 días hábiles. Tenga en cuenta que pueden aplicar impuestos aduanales ajenos a A&A Fashion.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-2">Empaque Ecológico</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Comprometidos con el medio ambiente, todos nuestros envíos se realizan en cajas de cartón reciclado y bolsas compostables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-lilac-900 text-lilac-100 py-12 mt-auto">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-serif text-white mb-4">LILAC</h3>
+                <p class="text-sm text-lilac-200">Redefiniendo la moda con elegancia y suavidad. Tu destino para el estilo contemporáneo 2025.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white hover:underline">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-white hover:underline">Catálogo</a></li>
+                    <li><a href="temporada.html" class="hover:text-white hover:underline">Tendencias</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Ayuda</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="envios.html" class="hover:text-white hover:underline">Envíos</a></li>
+                    <li><a href="devoluciones.html" class="hover:text-white hover:underline">Devoluciones</a></li>
+                    <li><a href="sugerencias.html" class="hover:text-white hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilac-800 flex items-center justify-center hover:bg-white hover:text-lilac-900 transition"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-lilac-800 pt-6 text-xs">
+            &copy; 2025 A&A Fashion. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
